@@ -96,6 +96,7 @@ class Program
 
         Console.WriteLine("1st day at school: " + alternativeSchoolDate + ", 1st birthday at school by Julian calendar: " + alternativeSchoolBirthday);
 
+        Console.ReadLine();
     }
 }
 
