@@ -1,21 +1,21 @@
 ﻿class SchoolCalendar
 {
-    int schoolMonth;
-    int schoolDay;
-    int minAge;
+    private int _schoolMonth;
+    private int _schoolDay;
+    private int _minAge;
 
     public SchoolCalendar(int sm, int sd, int ma)
     {
-        schoolMonth = sm;
-        schoolDay = sd;
-        minAge = ma;
+        _schoolMonth = sm;
+        _schoolDay = sd;
+        _minAge = ma;
     }
 
     public int GetSchoolDate(int birthDate)
     {
-        int firstDayAtSchool = (birthDate / 10000 + minAge) * 10000 + schoolMonth * 100 + schoolDay;
+        int firstDayAtSchool = (birthDate / 10000 + _minAge) * 10000 + _schoolMonth * 100 + _schoolDay;
 
-        if (birthDate % 10000 > schoolMonth * 100 + schoolDay)
+        if (birthDate % 10000 > _schoolMonth * 100 + _schoolDay)
         {
             firstDayAtSchool += 10000;
         }
@@ -80,7 +80,7 @@ class Program
     {
         int birthDate = 18900229;
 
-        //Dates by the Gregorian calendar
+        //Get by the Gregorian calendar
         SchoolCalendar calendar1 = new SchoolCalendar(9, 1, 6);
 
         int schoolDate = calendar1.GetSchoolDate(birthDate);
@@ -88,7 +88,7 @@ class Program
 
         Console.WriteLine("1st day at school: " + schoolDate + ", 1st birthday at school by Gregorian calendar: " + schoolBirthday);
 
-        //Dates by the Julian calendar
+        //Get by the Julian calendar
         SchoolCalendar calendar2 = new JulianSchoolCalendar(9, 15, 7);
 
         int alternativeSchoolDate = calendar2.GetSchoolDate(birthDate);
