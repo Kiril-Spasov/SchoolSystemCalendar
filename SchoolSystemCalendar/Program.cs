@@ -11,6 +11,8 @@
         _minAge = ma;
     }
 
+    //We are defining dates in the format 18900229 where 1890 is the year, 02 is month, 29 is day,
+    //as the course's intend is to show the time before objects existed.
     public int GetSchoolDate(int birthDate)
     {
         int firstDayAtSchool = (birthDate / 10000 + _minAge) * 10000 + _schoolMonth * 100 + _schoolDay;
